@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
 
-const origonalLanguageSchema = new mongoose.Schema({
+const originalLanguageSchema = new mongoose.Schema({
     name: { type: String, required: true , unique: true },
     })
 
-const origonalLanguageModel = mongoose.model("OrigonalLanguage", origonalLanguageSchema)
+const originalLanguageModel = mongoose.model("OriginalLanguage", originalLanguageSchema)
 
-module.exports = origonalLanguageModel
+module.exports = originalLanguageModel
