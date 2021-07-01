@@ -27,7 +27,7 @@ class App extends Component {
                                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                         <li className="nav-item">
-                                            <Link to="/homepage" className="nav-link active">Homepage</Link>
+                                            <Link to="/" className="nav-link active">Homepage</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link to="/welcome" className="nav-link">Welcome</Link>
@@ -50,11 +50,6 @@ class App extends Component {
                         </div>
                     </nav>
 
-                    <div class="input-group mb-3 pt-5">
-                        <input type="text" class="form-control" placeholder="Type a movie's name" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        </input>
-                        <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
-                    </div>
 
                     <Switch>
                         <Route exact path="/" component={Homepage} />

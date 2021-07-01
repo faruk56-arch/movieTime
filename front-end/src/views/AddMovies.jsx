@@ -4,7 +4,7 @@ export default class AddMovies extends Component {
     render() {
         return (
 
-            <div>
+            <div className="pt-5">
 
                 <div className="container">
                     <h1 className="text-center pt-5">Add a movie here !</h1>
