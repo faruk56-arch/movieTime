@@ -6,7 +6,7 @@ const adressModel = require("./models/adress")
 const actorModel = require("./models/actor")
 const originalLanguageModel = require("./models/originalLanguage")
 
-mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
+mongoose.connect("mongodb+srv://soul:movietime@cluster0.425d9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", (err) => {
     if (err) {
         console.error(err);
     } else {
@@ -334,92 +334,92 @@ const addMovies = async () => {
         const adresses = await adressModel.insertMany([
             {
                 type: "Cinema",
-                typename: "FastCine",
+                typeName: "FastCine",
                 adress: "120 Rue Fast Cine"
             },
             {
                 type: "Cinema",
-                typename: "HorreurCine",
+                typeName: "HorreurCine",
                 adress: "134 Rue Horreur Cine"
             },
             {
                 type: "Cinema",
-                typename: "CineForAll",
+                typeName: "CineForAll",
                 adress: "187 Rue Infiny"
             },
             {
                 type: "DVD",
-                typename: "Horreur dvd",
+                typeName: "Horreur dvd",
                 adress: "148 Rue Horror movies"
             },
             {
                 type: "DVD",
-                typename: "The old base",
+                typeName: "The old base",
                 adress: "245 Rue Old And Good"
             },
             {
                 type: "DVD",
-                typename: "The new base",
+                typeName: "The new base",
                 adress: "17 Rue New And Bad"
             },
             {
                 type: "TV",
-                typename: "TF1",
+                typeName: "TF1",
                 adress: "TF1"
             },
             {
                 type: "TV",
-                typename: "TF2",
+                typeName: "TF2",
                 adress: "TF2"
             },
             {
                 type: "TV",
-                typename: "TF3",
+                typeName: "TF3",
                 adress: "TF3"
             },
             {
                 type: "Video a la demande",
-                typename: "Netflix",
+                typeName: "Netflix",
                 adress: "Netflix.com"
             },
             {
                 type: "Video a la demande",
-                typename: "OCS",
+                typeName: "OCS",
                 adress: "OCS.com"
             },
             {
                 type: "Video a la demande",
-                typename: "Amazon",
+                typeName: "Amazon",
                 adress: "Amazon.com"
             },
             {
                 type: "Streaming",
-                typename: "Mavanim",
+                typeName: "Mavanim",
                 adress: "Mavanim.com"
             },
             {
                 type: "Streaming",
-                typename: "OK",
+                typeName: "OK",
                 adress: "OK.ru"
             },
             {
                 type: "Streaming",
-                typename: "Beru",
+                typeName: "Beru",
                 adress: "Beru.com"
             },
             {
                 type: "Internet",
-                typename: "Youtube",
+                typeName: "Youtube",
                 adress: "Youtube.com"
             },
             {
                 type: "Internet",
-                typename: "Dailymotion",
+                typeName: "Dailymotion",
                 adress: "Dailymotion.com"
             },
             {
                 type: "Internet",
-                typename: "Vimeo",
+                typeName: "Vimeo",
                 adress: "Vimeo.com"
             }
         ])
