@@ -6,7 +6,7 @@ const adressModel = require("./models/adress")
 const actorModel = require("./models/actor")
 const originalLanguageModel = require("./models/originalLanguage")
 
-mongoose.connect("mongodb+srv://soul:movietime@cluster0.425d9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", (err) => {
+mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
     if (err) {
         console.error(err);
     } else {

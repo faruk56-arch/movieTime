@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 export default class About extends Component {
     render() {
         return (
-            <div>
+
+            <div className="m-5">
 
                 <div className="container">
                     <h1 className="text-center pt-5">Final project with Konexio</h1>
