@@ -5,6 +5,9 @@ const adressModel = require("../models/adress")
 const genreModel = require("../models/genres")
 const originalLanguageModel = require("../models/originalLanguages")
 const path = require("path")
+const expressValidator = require("express-validator");
+
+
 
 const getMovies = async (req, res) => {
     try {
@@ -61,17 +64,23 @@ const getMovie = async (req, res) => {
 const addMovie = async (req, res) => {
 
     try {
+        const errors = expressValidator.validationResult(req);
 
-        const newMovie = await movieModel.create(req.body)
-        console.log(newMovie);
-        res.json({ message: "The movie was added!", newMovie })
-
+        if (!errors.isEmpty()) {
+            res.status(400).json({ errors: errors.array() })
+        } else {
+            const newMovie = await movieModel.create(req.body)
+            console.log(newMovie);
+            res.json({ message: "The movie was added!", newMovie })
+        }
     } catch (error) {
         console.log("error found", error);
         res.status(500).json({ message: "There was a problem", error })
 
     }
 }
+
+
 
 
 module.exports = {
