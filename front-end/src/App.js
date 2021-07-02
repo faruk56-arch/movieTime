@@ -6,6 +6,8 @@ import Welcome from './views/Welcome'
 import Contact from './views/Contact'
 import About from './views/About'
 import AddMovies from './views/AddMovies'
+import Login from './views/Login'
+import Signup from './views/Signup'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -41,6 +43,12 @@ class App extends Component {
                                         <li className="nav-item">
                                             <Link to="/add-movies" className="nav-link">AddMovies</Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link to="/login" className="nav-link">Log In</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link to="/signup" className="nav-link">Sign Up</Link>
+                                        </li>
 
                                     </ul>
 
@@ -57,6 +65,8 @@ class App extends Component {
                         <Route exact path="/contact" component={Contact} />
                         <Route exact path="/about" component={About} />
                         <Route exact path="/add-movies" component={AddMovies} />
+                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/signup" component={Signup} />
                     </Switch>
                 </div>
             </BrowserRouter>

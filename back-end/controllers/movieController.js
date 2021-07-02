@@ -1,15 +1,27 @@
 const movieModel = require("../models/movie")
-const authorModel = require("../models/author")
-const actorModel = require("../models/actor")
+const authorModel = require("../models/authors")
+const actorModel = require("../models/actors")
 const adressModel = require("../models/adress")
-const genreModel = require("../models/genre")
-const originalLanguageModel = require("../models/originalLanguage")
+const genreModel = require("../models/genres")
+const originalLanguageModel = require("../models/originalLanguages")
 const path = require("path")
 
 const getMovies = async (req, res) => {
     try {
-        const movies = await movieModel.find().populate(['actor', 'adress', 'author', 'genre', 'originalLanguage'])
-
+        const movies = await movieModel.find().populate("actor", { name: 1, _id: 0 })
+            .populate("adress", { type: 1, typeName: 1, adress: 1, _id: 0 })
+            .populate("author", { name: 1, _id: 0 })
+            .populate("genre", { name: 1, _id: 0 })
+            .populate("originalLanguage", { name: 1, _id: 0 }).select({
+                _id: 0,
+                title: 1,
+                description: 1,
+                image: 1,
+                releaseDate: 1,
+                note: 1,
+                voteCount: 1,
+                adult: 1
+            })
         res.json(movies)
     } catch (error) {
 

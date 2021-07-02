@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const movieModel = require("./models/movie")
-const genreModel = require("./models/genre")
-const authorModel = require("./models/author")
+const genreModel = require("./models/genres")
+const authorModel = require("./models/authors")
 const adressModel = require("./models/adress")
-const actorModel = require("./models/actor")
-const originalLanguageModel = require("./models/originalLanguage")
+const actorModel = require("./models/actors")
+const originalLanguageModel = require("./models/originalLanguages")
 
 mongoose.connect("mongodb+srv://soul:movietime@cluster0.425d9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", (err) => {
     if (err) {
