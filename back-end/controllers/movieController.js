@@ -6,6 +6,7 @@ const genreModel = require("../models/genres")
 const originalLanguageModel = require("../models/originalLanguages")
 const path = require("path")
 
+
 const getMovies = async (req, res) => {
     try {
         const movies = await movieModel.find().populate("actor", { name: 1, _id: 0 })
@@ -72,6 +73,8 @@ const addMovie = async (req, res) => {
 
     }
 }
+
+
 
 
 module.exports = {
