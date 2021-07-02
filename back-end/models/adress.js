@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")
 
 const adressSchema = new mongoose.Schema({
-    type: String,
-    typeName: String,
+    type: { type: String, required: true },
+    typeName: { type: String, required: true, unique: true },
     adress: { type: String, required: true, unique: true },
 })
 
