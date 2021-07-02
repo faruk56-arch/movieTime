@@ -16,7 +16,7 @@ export default class Login extends Component {
                     </div>
                     <div className="d-flex justify-content-center pt-4">
 
-                        <button className="btn btn-secondary" >Sign up</button>
+                        <button className="btn btn-secondary" >log in</button>
                     </div>
                 </div>
             </div>
