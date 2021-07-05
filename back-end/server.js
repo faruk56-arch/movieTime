@@ -1,6 +1,9 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const moviesRoutes = require("./routes/moviesRoutes")
+const authRoutes = require("./routes/authRoutes")
+const usersRoutes = require("./routes/usersRoutes")
+
 const cors = require("cors")
 
 
@@ -13,7 +16,7 @@ mongoose.connect("mongodb://localhost:27017/MovieTime", (err) => {
     }
 })
 
-const port = config.port
+const port = 8000
 
 const app = express()
 app.use(cors())
