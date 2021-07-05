@@ -17,6 +17,8 @@ export default class AddMovies extends Component {
                         <input type="text" class="form-control" placeholder="How to find the movie" aria-label="How to find the movie" aria-describedby="button-addon2"></input>
                         <input type="text" class="form-control" placeholder="Adress" aria-label="Adress" aria-describedby="button-addon2"></input>
                         <input type="text" class="form-control" placeholder="Genres" aria-label="Genres" aria-describedby="button-addon2"></input>
+                        <input type="text" class="form-control" placeholder="Vote" aria-label="Vote" aria-describedby="button-addon2"></input>
+                        <input type="text" class="form-control" placeholder="Vote Count" aria-label="Vote Count" aria-describedby="button-addon2"></input>
                         <input type="text" class="form-control" placeholder="Adult" aria-label="Adult" aria-describedby="button-addon2"></input>
                         <button class="btn btn-outline-primary" type="button" id="button-addon2">Add</button>
                     </div>

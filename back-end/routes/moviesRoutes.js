@@ -1,16 +1,19 @@
 const express = require("express")
 const router = express.Router()
 const {
-    getMovies,
+    get10Movies,
+    getAllMovies,
     getMovie,
     addMovie
 } = require("../controllers/movieController")
 const { validationMovies } = require("../middlewares/validationsMiddlewares")
 
 
-router.get("/", getMovies)
+router.get("/", getAllMovies)
 
-router.get("/:name", getMovie)
+router.get("/10", get10Movies)
+
+router.get("/:title", getMovie)
 
 router.post("/",validationMovies, addMovie)
 

@@ -8,8 +8,7 @@ const path = require("path")
 const expressValidator = require("express-validator");
 
 
-
-const getMovies = async (req, res) => {
+const getAllMovies = async (req, res) => {
     try {
         const movies = await movieModel.find().populate("actor", { name: 1, _id: 0 })
             .populate("adress", { type: 1, typeName: 1, adress: 1, _id: 0 })
@@ -32,10 +31,35 @@ const getMovies = async (req, res) => {
     }
 }
 
+
+const get10Movies = async (req, res) => {
+    try {
+        const movies = await movieModel.find().limit(10).populate("actor", { name: 1, _id: 0 })
+            .populate("adress", { type: 1, typeName: 1, adress: 1, _id: 0 })
+            .populate("author", { name: 1, _id: 0 })
+            .populate("genre", { name: 1, _id: 0 })
+            .populate("originalLanguage", { name: 1, _id: 0 }).select({
+                _id: 0,
+                title: 1,
+                description: 1,
+                image: 1,
+                releaseDate: 1,
+                note: 1,
+                voteCount: 1,
+                adult: 1
+            })
+        res.json(movies)
+    } catch (error) {
+
+        res.status(500).json({ message: "There was a problem", error })
+    }
+}
+
+
 const getMovie = async (req, res) => {
     try {
         const titlemovie = req.params.title
-        const movie = await movieModel.findOne(titlemovie)
+        const movie = await movieModel.findOne({title : titlemovie})
             .populate("actor", { name: 1, _id: 0 })
             .populate("adress", { typeName: 1, adress: 1, _id: 0 })
             .populate("author", { name: 1, _id: 0 })
@@ -84,6 +108,6 @@ const addMovie = async (req, res) => {
 
 
 module.exports = {
-    getMovie, getMovies, addMovie
+    getMovie, get10Movies,getAllMovies, addMovie
 }
 

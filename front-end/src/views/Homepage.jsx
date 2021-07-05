@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Card from "../components/Card"
+import "./homepage.css"
 
 export default class Homepage extends Component {
 
@@ -18,7 +20,7 @@ export default class Homepage extends Component {
     getMovies() {
         // console.log("getCountry", country);
 
-        const url = "http://localhost:8000/movies"
+        const url = "http://localhost:8000/movies/10"
 
         fetch(url)
             .then(response => response.json())
@@ -42,20 +44,21 @@ export default class Homepage extends Component {
                         </input>
                         <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
                     </div>
-                    <div>
-                        {this.state.movies.map(movie => <div>
-                            <p>Title = {movie.title}</p>
-                            <p>Description = {movie.description}</p>
-                            <img src={movie.image} />
-                        </div>)}
-
+                    <div className = "container-card"> 
+                        {this.state.movies.map(movie => {
+                            return <Card
+                                title={movie.title}
+                                description={movie.description}
+                                image={movie.image}
+                            />
+                        })}
                     </div>
                 </div>
             )
         }
         return (
             <div>
-                date processing
+                data processing
             </div>
         )
     }
