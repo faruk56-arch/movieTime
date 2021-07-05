@@ -8,7 +8,7 @@ const cors = require("cors")
 
 
 
-mongoose.connect("mongodb://localhost:27017/MovieTime", (err) => {
+mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
     if (err) {
         console.error(err);
     } else {
