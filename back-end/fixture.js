@@ -16,25 +16,36 @@ mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
 })
 
 const users = userModel.insertMany([
+    
+    {
+        username: "mehdi",
+        password: "pouloulou",
+        role:1
+    },
     {
         username: "stanislas",
-        password: "skirikipapa"
+        password: "skirikipapa",
+        role:2
     },
     {
         username: "hubert",
-        password: "bonsoirparis"
+        password: "bonsoirparis",
+        role:2
     },
     {
         username: "richard",
-        password: "iminthegettho"
+        password: "iminthegettho",
+        role:2
     },
     {
         username: "eustache",
-        password: "kekeke"
+        password: "kekeke",
+        role:2
     },
     {
         username: "jean eudes",
-        password: "kariiim"
+        password: "kariiim",
+        role:2
     },
 ])
 

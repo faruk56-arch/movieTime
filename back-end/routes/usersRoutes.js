@@ -8,3 +8,4 @@ router.get("/", verifyToken, onlyAdmin, getUsers)
 router.get("/myself", verifyToken, getUser)
 
 module.exports = router
+
