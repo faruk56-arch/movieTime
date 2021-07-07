@@ -1,7 +1,7 @@
 const config = {
     secret: "monmotsecretHERO",
     port: 8000,
-    mongoURL: "mongodb://localhost:27017/herosDB"
+    mongoURL: "mongodb://localhost:27017/movieTime"
 }
 
 module.exports = config

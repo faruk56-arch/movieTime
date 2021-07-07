@@ -3,16 +3,19 @@ const router = express.Router()
 const {
     getMovies,
     getMovie,
-    addMovie
+    addMovie, 
+    deleteMovie, 
+    replaceMovie
 } = require("../controllers/movieController")
-const { validationMovies } = require("../middlewares/validationsMiddlewares")
-
+// const { validationMovies } = require("../controllers/validationsMiddlewares")
 
 router.get("/", getMovies)
 
-router.get("/:name", getMovie)
+router.get("/:title", getMovie)
 
-router.post("/",validationMovies, addMovie)
+router.post("/", addMovie)
+router.delete("/:id", deleteMovie)
+router.put("/:id", replaceMovie)
 
 router.all("*", (req, res) => {
     res.status(404).json({
