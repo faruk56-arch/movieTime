@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
 import Search from '../views/Search'
-=======
 import Card from "../components/Card"
 import "./homepage.css"
->>>>>>> dev
 
 export default class Homepage extends Component {
 
