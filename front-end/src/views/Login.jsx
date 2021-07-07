@@ -1,6 +1,18 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+
 
 export default class Login extends Component {
+
+// getLogin = () => {
+
+//     fetch('http://localhost:8000/auth/login',
+//      {method:'GET', 
+// headers: {'Authorization': 'Basic ' + btoa('login:password')}})
+// .then(response => response.json())
+// .then(json => console.log(json));
+// }
+
     render() {
         return (
 
