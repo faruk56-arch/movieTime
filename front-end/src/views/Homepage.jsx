@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Search from '../views/Search'
 
 export default class Homepage extends Component {
 
@@ -37,7 +38,8 @@ export default class Homepage extends Component {
         if (this.state.movies.length > 0) {
             return (
                 <div>
-                    <div class="input-group mb-3 pt-5">
+                    <Search getName={this.getName}/>
+                    {/* <div class="input-group mb-3 pt-5">
                         <input type="text" class="form-control" placeholder="Type a movie's name" aria-label="Recipient's username" aria-describedby="button-addon2">
                         </input>
                         <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
@@ -49,7 +51,7 @@ export default class Homepage extends Component {
                             <img src={movie.image} />
                         </div>)}
 
-                    </div>
+                    </div> */}
                 </div>
             )
         }
