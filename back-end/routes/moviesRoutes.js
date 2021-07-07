@@ -1,7 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const {
-    getMovies,
+    get10Movies,
+    getAllMovies,
     getMovie,
     addMovie, 
     deleteMovie, 
@@ -9,7 +10,9 @@ const {
 } = require("../controllers/movieController")
 // const { validationMovies } = require("../controllers/validationsMiddlewares")
 
-router.get("/", getMovies)
+router.get("/", getAllMovies)
+
+router.get("/10", get10Movies)
 
 router.get("/:title", getMovie)
 

@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import Search from '../views/Search'
+=======
+import Card from "../components/Card"
+import "./homepage.css"
+>>>>>>> dev
 
 export default class Homepage extends Component {
 
@@ -19,7 +24,7 @@ export default class Homepage extends Component {
     getMovies() {
         // console.log("getCountry", country);
 
-        const url = "http://localhost:8000/movies"
+        const url = "http://localhost:8000/movies/10"
 
         fetch(url)
             .then(response => response.json())
@@ -39,25 +44,26 @@ export default class Homepage extends Component {
             return (
                 <div>
                     <Search getName={this.getName}/>
-                    {/* <div class="input-group mb-3 pt-5">
+                    <div class="input-group mb-3 pt-5">
                         <input type="text" class="form-control" placeholder="Type a movie's name" aria-label="Recipient's username" aria-describedby="button-addon2">
                         </input>
                         <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
                     </div>
-                    <div>
-                        {this.state.movies.map(movie => <div>
-                            <p>Title = {movie.title}</p>
-                            <p>Description = {movie.description}</p>
-                            <img src={movie.image} />
-                        </div>)}
-
-                    </div> */}
+                    <div className = "container-card"> 
+                        {this.state.movies.map(movie => {
+                            return <Card
+                                title={movie.title}
+                                description={movie.description}
+                                image={movie.image}
+                            />
+                        })}
+                    </div>
                 </div>
             )
         }
         return (
             <div>
-                date processing
+                data processing
             </div>
         )
     }

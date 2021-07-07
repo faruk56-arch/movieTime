@@ -5,6 +5,7 @@ const authorModel = require("./models/authors")
 const adressModel = require("./models/adress")
 const actorModel = require("./models/actors")
 const originalLanguageModel = require("./models/originalLanguages")
+const userModel = require("./models/user")
 
 mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
     if (err) {
@@ -13,6 +14,40 @@ mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
         console.log("I'm connected to the database")
     }
 })
+
+const users = userModel.insertMany([
+    
+    {
+        username: "mehdi",
+        password: "pouloulou",
+        role:1
+    },
+    {
+        username: "stanislas",
+        password: "skirikipapa",
+        role:2
+    },
+    {
+        username: "hubert",
+        password: "bonsoirparis",
+        role:2
+    },
+    {
+        username: "richard",
+        password: "iminthegettho",
+        role:2
+    },
+    {
+        username: "eustache",
+        password: "kekeke",
+        role:2
+    },
+    {
+        username: "jean eudes",
+        password: "kariiim",
+        role:2
+    },
+])
 
 const addMovies = async () => {
 
