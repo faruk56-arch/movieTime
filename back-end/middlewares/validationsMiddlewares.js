@@ -8,7 +8,7 @@ const validationMovies = [
 ]
 const validationLogin = [
     expressValidator.body("password").exists().isString(),
-    validate
+
 ]
 const validationSignup = [
     expressValidator.body("role").exists().isInt(),
@@ -27,7 +27,7 @@ const validationSignup = [
         return schema.validate(value);
 
     }),
-    validate
+  
 ]
 
 

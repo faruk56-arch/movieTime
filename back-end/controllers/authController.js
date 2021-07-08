@@ -24,8 +24,10 @@ const login = async (req, res) => {
     try {
         const username = req.body.username
         const user = await userModel.findOne({ username })
-
         const result = bcryptjs.compareSync(req.body.password, user.password)
+
+        console.log('je teste quelque chose')
+
 
         if (result) {
             const token = jwt.sign(

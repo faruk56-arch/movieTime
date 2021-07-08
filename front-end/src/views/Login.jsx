@@ -2,36 +2,33 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 
+
 export default class Login extends Component {
     constructor() {
         super()
+
 
         this.state = {
             username: "",
             password: ""
         }
-
+        this.getLogin=this.getLogin.bind(this)
     }
     
-    getLogin() {        
-        
+
+    async getLogin() {
         try {
-            axios
             const url = "http://localhost:8000/auth/login"
-    
-            .get(url)
+            const {data} = await axios.post(url,{username:this.state.username , password:this.state.password})
+          console.log(data);
+           localStorage.setItem('token', data.token);
+           this.props.history.push("/");
             
-            
-            this.setState({
-                username : data,
-                password : data
-            })
         } catch (error) {
             console.log("errror", error);
-            
+
         }
     }
-
 
 
     render() {
@@ -42,14 +39,14 @@ export default class Login extends Component {
                 <div className="container">
                     <h1 className="text-center pt-5">Already subscribed? Please Log in</h1>
                     <div className="input-group pt-5">
-                        <input type="text" className="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2"></input>
+                        <input type="text" className="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2" onChange={(e) => this.setState({username : e.target.value})} />
                     </div>
                     <div className="input-group pt-5">
-                        <input type="password" className="form-control" placeholder="password" aria-label="Name" aria-describedby="button-addon2"></input>
+                        <input type="password" className="form-control" placeholder="password" aria-label="Name" aria-describedby="button-addon2"onChange={(e) => this.setState({password : e.target.value})}></input>
                     </div>
                     <div className="d-flex justify-content-center pt-4">
 
-                        <button className="btn btn-secondary" >log in</button>
+                        <button className="btn btn-secondary" onClick={() => this.getLogin()} >log in</button>
                     </div>
                 </div>
             </div>
