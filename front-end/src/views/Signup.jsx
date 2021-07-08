@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
 
 export default class Signup extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            username: "",
+            password: ""
+        }
+
+    }
+    
     render() {
         return (
 
@@ -8,11 +18,11 @@ export default class Signup extends Component {
 
                 <div className="container">
                     <h1 className="text-center pt-5">Didn't register yet? Please Sign Up</h1>
-                    <div class="input-group pt-5">
-                        <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2"></input>
+                    <div className="input-group pt-5">
+                        <input type="text" className="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2"></input>
                     </div>
                     <div class="input-group pt-5">
-                        <input type="password" class="form-control" placeholder="password" aria-label="Name" aria-describedby="button-addon2"></input>
+                        <input type="password" className="form-control" placeholder="password" aria-label="Name" aria-describedby="button-addon2"></input>
                     </div>
                     <div className="d-flex justify-content-center pt-4">
 

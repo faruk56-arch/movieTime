@@ -3,15 +3,36 @@ import axios from 'axios'
 
 
 export default class Login extends Component {
+    constructor() {
+        super()
 
-// getLogin = () => {
+        this.state = {
+            username: "",
+            password: ""
+        }
 
-//     fetch('http://localhost:8000/auth/login',
-//      {method:'GET', 
-// headers: {'Authorization': 'Basic ' + btoa('login:password')}})
-// .then(response => response.json())
-// .then(json => console.log(json));
-// }
+    }
+    
+    getLogin() {        
+        
+        try {
+            axios
+            const url = "http://localhost:8000/auth/login"
+    
+            .get(url)
+            
+            
+            this.setState({
+                username : data,
+                password : data
+            })
+        } catch (error) {
+            console.log("errror", error);
+            
+        }
+    }
+
+
 
     render() {
         return (
@@ -20,11 +41,11 @@ export default class Login extends Component {
 
                 <div className="container">
                     <h1 className="text-center pt-5">Already subscribed? Please Log in</h1>
-                    <div class="input-group pt-5">
-                        <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2"></input>
+                    <div className="input-group pt-5">
+                        <input type="text" className="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2"></input>
                     </div>
-                    <div class="input-group pt-5">
-                        <input type="password" class="form-control" placeholder="password" aria-label="Name" aria-describedby="button-addon2"></input>
+                    <div className="input-group pt-5">
+                        <input type="password" className="form-control" placeholder="password" aria-label="Name" aria-describedby="button-addon2"></input>
                     </div>
                     <div className="d-flex justify-content-center pt-4">
 
