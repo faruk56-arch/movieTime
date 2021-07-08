@@ -24,7 +24,7 @@ const onlyAdmin = (req, res, next) => {
     if (req.user && req.user.role === 1) {
         next()
     } else {
-        res.status(403).json({ message: "You have access" })
+        res.status(403).json({ message: "Only Admin can have acces to this" })
     }
 }
 

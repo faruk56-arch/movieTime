@@ -7,7 +7,6 @@ const validationMovies = [
     expressValidator.body(["adult"]).isBoolean(),
 ]
 const validationLogin = [
-    expressValidator.body("email").exists().isEmail(),
     expressValidator.body("password").exists().isString(),
     validate
 ]
@@ -23,12 +22,11 @@ const validationSignup = [
             .has().lowercase()
             .has().digits(1)
             .has().not().spaces()
-            .is().not().oneOf(["Salut-12"])
+           
 
         return schema.validate(value);
 
     }),
-    expressValidator.body(["firstName", "lastName"]).exists().isString(),
     validate
 ]
 
