@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Search from '../views/Search'
 import Card from "../components/Card"
 import "./homepage.css"
+
 export default class Homepage extends Component {
     constructor() {
         super()
