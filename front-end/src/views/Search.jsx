@@ -50,20 +50,21 @@ export default class Search extends Component {
                         Object.keys(this.state.filmTrouver).length > 0 ? (
 
                             <div>
-                                <p>title = {this.state.filmTrouver.title}</p>
-                                <p>description = {this.state.filmTrouver.description}</p>
-                                <p>adult = {this.state.filmTrouver.adult ? 'yes' : 'no'}</p>
-                                <img src={this.state.filmTrouver.image} />
-                                <p>Note = {this.state.filmTrouver.note}</p>
-                                <p>voteCount = {this.state.filmTrouver.voteCount}</p>
-                                <p>Genre(s) = {this.state.filmTrouver.genre.map(genre => genre.name).join(", ")}</p>
-                                <p>author = {this.state.filmTrouver.author.map(author => author.name).join(' ')}</p>
-                                <p>actor= {this.state.filmTrouver.actor.map(actor => actor.name).join(', ')}</p>
-                                <p>releaseDate = {this.state.filmTrouver.releaseDate}</p>
-                                <p>Where to find = {this.state.filmTrouver.adress.map(adress => adress.adress).join(", ")}</p>
-                                <p>originalLanguage= {this.state.filmTrouver.originalLanguage.map(originalLanguage => originalLanguage.name).join(' ')}</p>
+                                <p>Title = {filmTrouver.title}</p>
+                                <p>Description = {filmTrouver.description}</p>
+                                <p>Adult Movie = {filmTrouver.adult ? "✓" : "X"}</p>
+                                <img src={filmTrouver.image} />
+                                <p>Note = {filmTrouver.note}</p>
+                                <p>Number of votes so far = {filmTrouver.voteCount}</p>
+                                <p>Genre(s) = {filmTrouver.genre.map(genre => genre.name).join(", ")}</p>
+                                <p>Author(s) = {filmTrouver.author.map(author => author.name).join(", ")}</p>
+                                <p>Actor(s) = {filmTrouver.actor.map(actor => actor.name).join(", ")}</p>
+                                <p>Support = {filmTrouver.adress.map(adress => adress.type).join(", ")}</p>
+                                <p>Name = {filmTrouver.adress.map(adress => adress.typeName).join(", ")}</p>
+                                <p>Where to find = {filmTrouver.adress.map(adress => adress.adress).join(", ")}</p>
+                                <p>Original Language = {filmTrouver.originalLanguage.map(originalLanguage => originalLanguage.name)}</p>
                             </div>
-                        ) : "film ne pas trouvé"
+                        ) : "Entrer un film a rechercher"
                     }
 
 

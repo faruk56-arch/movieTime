@@ -4,11 +4,11 @@ const {
     get10Movies,
     getAllMovies,
     getMovie,
-    addMovie, 
-    deleteMovie, 
+    addMovie,
+    deleteMovie,
     replaceMovie
 } = require("../controllers/movieController")
-// const { validationMovies } = require("../controllers/validationsMiddlewares")
+const { validationMovies } = require("../middlewares/validationsMiddlewares")
 
 router.get("/", getAllMovies)
 
@@ -16,8 +16,10 @@ router.get("/10", get10Movies)
 
 router.get("/:title", getMovie)
 
-router.post("/", addMovie)
+router.post("/", validationMovies, addMovie)
+
 router.delete("/:id", deleteMovie)
+
 router.put("/:id", replaceMovie)
 
 router.all("*", (req, res) => {
