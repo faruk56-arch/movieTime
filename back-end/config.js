@@ -1,7 +1,7 @@
 const config = {
     secret: "monmotsecretMOVIE",
     port: 8000,
-    mongoURL: "mongodb://localhost:27017/movieTime"
+    mongoURL: "mongodb+srv://soul:movieTime@cluster0.425d9.mongodb.net/myFirstDatabase?retryWrites=true&w=major"
 }
 
 module.exports = config
