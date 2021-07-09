@@ -1,5 +1,5 @@
 const expressValidator = require("express-validator");
-
+const passwordValidator = require("password-validator")
 const validationMovies = [
     expressValidator.body(["title", "originalLanguage", "description", "image", "actor", "author", "releaseDate", "genre"]).exists().isString(),
     expressValidator.body("note").exists().isInt({ min: 1, max: 10 }),
@@ -16,10 +16,10 @@ const validationSignup = [
         const schema = new passwordValidator()
 
         schema
-            .is().min(4)
+            .is().min(6)
             .is().max(30)
-            .has().uppercase()
-            .has().lowercase()
+            .has().uppercase(1)
+            .has().lowercase(1)
             .has().digits(1)
             .has().not().spaces()
            
@@ -35,5 +35,6 @@ const validationSignup = [
 
 module.exports = {
     validationMovies,
-    validationSignup
+    validationSignup,
+    validationLogin
 }
