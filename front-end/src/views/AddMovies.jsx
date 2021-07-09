@@ -2,25 +2,43 @@ import React, { Component } from 'react'
 
 export default class AddMovies extends Component {
     render() {
+
         return (
+            <div className="container">
+                <div className="row pt-4">
+                    <div className="offset-3 col-6 mx-auto">
+                        <div className="alert alert-dark" role="success">
+                            <h3 className="text-center">
+                                Add a new movie here !
+                            </h3>
+                            {/* (The new movie was added correctly !) Quand on clique sur le bouton Add  */}
+                        </div>
+                    </div>
+                </div>
 
-            <div className="pt-5">
 
-                <div className="container">
-                    <h1 className="text-center pt-5">Add a movie here !</h1>
-                    <div class="input-group pt-5">
-                        <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Original Language" aria-label="Original Language" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Actors" aria-label="Actors" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Authors" aria-label="Authors" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Release Date" aria-label="Release Date" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="How to find the movie" aria-label="How to find the movie" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Adress" aria-label="Adress" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Genres" aria-label="Genres" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Vote" aria-label="Vote" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Vote Count" aria-label="Vote Count" aria-describedby="button-addon2"></input>
-                        <input type="text" class="form-control" placeholder="Adult" aria-label="Adult" aria-describedby="button-addon2"></input>
-                        <button class="btn btn-outline-primary" type="button" id="button-addon2">Add</button>
+                <div className="row">
+                </div>
+
+                <div className="pt-3 offset-3 col-6 mx-auto">
+                    <div className="mb-3 row">
+                        <label htmlFor="title" className="col-sm-4 col-form-label">Title</label>
+                        <div className="col-sm-8">
+                            <input type="text" className="form-control" id="title" />
+                        </div>
+                    </div>
+                    <div className="mb-3 row">
+                        <label htmlFor="color" className="col-sm-4 col-form-label">Color</label>
+                        <div className="col-sm-8">
+                            <input type="text" className="form-control" id="color" />
+                        </div>
+                    </div>
+
+                    <div className="mb-3 row">
+                        <label htmlFor="voteCount" className="col-sm-4 col-form-label">Vote count</label>
+                        <div className="col-sm-8">
+                            <input type="number" className="form-control" id="Vote count" />
+                        </div>
                     </div>
                 </div>
             </div>
