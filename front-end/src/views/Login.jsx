@@ -18,11 +18,13 @@ export default class Login extends Component {
 
     async getLogin() {
         try {
+            alert("you are now logged in, welcome !")
             const url = "http://localhost:8000/auth/login"
             const {data} = await axios.post(url,{username:this.state.username , password:this.state.password})
           console.log(data);
            localStorage.setItem('token', data.token);
            this.props.history.push("/");
+           window.location.reload();
             
         } catch (error) {
             console.log("errror", error);
