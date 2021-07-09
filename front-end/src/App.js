@@ -12,6 +12,29 @@ import Signup from './views/Signup'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
+    constructor() {
+        super()
+
+
+        this.state = {
+            userToken: this.getLocalStorage(),
+
+        }
+    }
+
+    getLocalStorage() {
+        const token = localStorage.getItem('token') || "";
+        return token
+    }
+
+    logOut(){
+        localStorage.removeItem("token")
+        this.setState({
+            userToken : ""
+        });
+
+    }
+
     render() {
 
         return (
@@ -40,15 +63,28 @@ class App extends Component {
                                         <li className="nav-item">
                                             <Link to="/about" className="nav-link">About</Link>
                                         </li>
-                                        <li className="nav-item">
-                                            <Link to="/add-movies" className="nav-link">AddMovies</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to="/login" className="nav-link">Log In</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link to="/signup" className="nav-link">Sign Up</Link>
-                                        </li>
+                                        {this.state.userToken === "" ? (
+                                            <>
+                                                <li className="nav-item">
+                                                    <Link to="/login" className="nav-link">Log In</Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                    <Link to="/signup" className="nav-link">Sign Up</Link>
+                                                </li>
+                                            </>
+                                        ) :
+                                            (
+                                                <>
+                                                    <li className="nav-item">
+                                                        <Link to="/add-movies" className="nav-link">AddMovies</Link>
+                                                    </li>
+                                                    <li className="nav-item">
+                                                        <Link to="" className="nav-link"onClick = { () => this.logOut() }>Log Out</Link>
+                                                    </li>
+                                                </>
+                                            )}
+
+                                      
 
                                     </ul>
 

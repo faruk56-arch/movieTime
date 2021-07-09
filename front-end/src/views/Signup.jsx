@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { withAlert } from 'react-alert'
 
 export default class Signup extends Component {
     constructor() {
@@ -16,6 +17,8 @@ export default class Signup extends Component {
 
     async getSignup() {
         try {
+
+            alert("you are now registred, please login !")
             const url = "http://localhost:8000/auth/signup"
             const {data} = await axios.post(url,{username:this.state.username , password:this.state.password})
           console.log(data);
@@ -27,9 +30,10 @@ export default class Signup extends Component {
 
         }
     }
-
+    
     
     render() {
+        const alert = this.props.alert;
         return (
 
             <div className="pt-5">
