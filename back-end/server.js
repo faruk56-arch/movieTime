@@ -1,12 +1,17 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const moviesRoutes = require("./routes/moviesRoutes")
+const genresRoutes = require("./routes/genresRoutes")
+const actorsRoutes = require("./routes/actorsRoutes")
+const authorsRoutes = require("./routes/authorsRoutes")
+const adressRoutes = require("./routes/adressRoutes")
+const originalLanguagesRoutes = require("./routes/originalLanguagesRoutes")
 const authRoutes = require("./routes/authRoutes")
 const usersRoutes = require("./routes/usersRoutes")
 
 const cors = require("cors")
 
-mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
+mongoose.connect("mongodb+srv://soul:movieTime@cluster0.425d9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", (err) => {
     if (err) {
         console.error(err);
     } else {
@@ -22,6 +27,11 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/movies", moviesRoutes)
+app.use("/genres", genresRoutes)
+app.use("/actors", actorsRoutes)
+app.use("/authors", authorsRoutes)
+app.use("/adress", adressRoutes)
+app.use("/originalLanguages", originalLanguagesRoutes)
 app.use("/auth", authRoutes)
 app.use("/users", usersRoutes)
 
