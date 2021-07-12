@@ -58,7 +58,11 @@ export default class Homepage extends Component {
                                     genre={movie.genre.map(genre => genre.name).join(", ")}
                                     author={movie.author.map(author => author.name).join(' ')}
                                     actor={movie.actor.map(actor => actor.name).join(', ')}
-                                    Where to find={movie.adress.map(adress => adress.adress).join(", ")}
+                                    adress={movie.adress.map(adress => adress.adress).join(", ")}
+                                    Support={movie.adress.map(adress => adress.type).join(", ")}
+                                    // Name = {movie.adress.map(adress => adress.typeName).join(", ")}
+                                    // Support={movie.adress.map(adress => adress.type).join(", ")}
+                                    // Where to find={movie.adress.map(adress => adress.adress).join(", ")}
                                     originalLanguage={movie.originalLanguage.map(originalLanguage => originalLanguage.name).join(' ')}
                                     note={movie.note}
                                     voteCount={movie.voteCount}
