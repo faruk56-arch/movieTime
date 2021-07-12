@@ -3,3 +3,12 @@
     height : 600px;
     margin-bottom: 10px;
 }
+
+
+.Card2 {
+    width : 350px;
+    height : 200px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    margin:auto;
+}

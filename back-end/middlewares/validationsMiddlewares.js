@@ -22,12 +22,12 @@ const validationSignup = [
             .has().lowercase()
             .has().digits(1)
             .has().not().spaces()
-           
+
 
         return schema.validate(value);
 
     }),
-  
+
 ]
 
 
