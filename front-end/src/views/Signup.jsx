@@ -61,9 +61,16 @@ export default class Signup extends Component {
 
             <div className="pt-5">
                 {this.state.errors && <div>
-                    {this.state.errors.map((error) => {
-                        return <p>{error}</p>
+                    
+                    <div className="row">
+                        <div className="offset-3 col-6 mx-auto">
+                        {this.state.errors.map((error) => {
+                        return <div className="alert alert-danger" role="alert">
+                        {error}
+                    </div>
                     })}
+                        </div>
+                    </div>
                 </div>}
                 <div className="container">
                     <h1 className="text-center pt-5">Didn't register yet? Please Sign Up</h1>
