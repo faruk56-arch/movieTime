@@ -17,6 +17,7 @@ class App extends Component {
 
         this.state = {
             userToken: this.getLocalStorage(),
+            informDisconnection : false,
 
         }
     }
@@ -29,9 +30,15 @@ class App extends Component {
     logOut() {
         localStorage.removeItem("token")
         this.setState({
-            userToken: ""
+            userToken: "",
+            informDisconnection: true,
         });
-
+        setTimeout(() => {
+            this.setState({
+                informDisconnection: false,
+            });
+        }, 10000)
+      
     }
 
     render() {
@@ -90,7 +97,15 @@ class App extends Component {
                             </div>
                         </div>
                     </nav>
-
+                    {this.state.informDisconnection &&
+                    <div className="row">
+                        <div className="offset-3 col-6 mx-auto">
+                            <div className="alert alert-danger" role="alert">
+                                User logged out successfully ! 
+                            </div>
+                        </div>
+                    </div>
+                }
 
                     <Switch>
                         <Route exact path="/" component={Homepage} />
