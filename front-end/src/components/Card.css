@@ -1,0 +1,15 @@
+.card {
+    width : 250px;
+    height : 600px;
+    margin-bottom: 10px;
+}
+
+
+.Card2 {
+    width : 650px;
+    height : 200px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin:auto;
+}
