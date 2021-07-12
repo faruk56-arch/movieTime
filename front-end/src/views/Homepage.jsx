@@ -47,6 +47,7 @@ export default class Homepage extends Component {
             return (
                 <div>
                     <Search getMovie={this.getMovie} />
+                
                     {this.state.movies.length === 1 &&
                         <>
                             {this.state.movies.map(movie => {
@@ -58,11 +59,9 @@ export default class Homepage extends Component {
                                     genre={movie.genre.map(genre => genre.name).join(", ")}
                                     author={movie.author.map(author => author.name).join(' ')}
                                     actor={movie.actor.map(actor => actor.name).join(', ')}
-                                    adress={movie.adress.map(adress => adress.adress).join(", ")}
-                                    Support={movie.adress.map(adress => adress.type).join(", ")}
-                                    // Name = {movie.adress.map(adress => adress.typeName).join(", ")}
-                                    // Support={movie.adress.map(adress => adress.type).join(", ")}
-                                    // Where to find={movie.adress.map(adress => adress.adress).join(", ")}
+                                    support={movie.adress.map(adress => adress.type).join(", ")}
+                                    name={movie.adress.map(adress => adress.typeName).join(", ")}
+                                    whereToFind={movie.adress.map(adress => adress.adress).join(", ")}
                                     originalLanguage={movie.originalLanguage.map(originalLanguage => originalLanguage.name).join(' ')}
                                     note={movie.note}
                                     voteCount={movie.voteCount}
@@ -91,18 +90,3 @@ export default class Homepage extends Component {
         )
     }
 }
-
-
-
-
-
-
-// <div className="container-card">
-//     {this.state.movies.map(movie => {
-//         return <Card
-//             title={movie.title}
-//             description={movie.description}
-//             image={movie.image}
-//         />
-//     })}
-// </div>
