@@ -79,9 +79,9 @@ class App extends Component {
                                         ) :
                                             (
                                                 <>
-                                                    <li className="nav-item">
+                                                    {/* <li className="nav-item">
                                                         <Link to="/add-movies" className="nav-link">AddMovies</Link>
-                                                    </li>
+                                                    </li> */}
                                                     <li className="nav-item">
                                                         <Link to="" className="nav-link" onClick={() => this.logOut()}>Log Out</Link>
                                                     </li>
