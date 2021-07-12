@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
 
 import Homepage from './views/Homepage'
-import Welcome from './views/Welcome'
 import Contact from './views/Contact'
 import About from './views/About'
 import AddMovies from './views/AddMovies'
@@ -27,10 +26,10 @@ class App extends Component {
         return token
     }
 
-    logOut(){
+    logOut() {
         localStorage.removeItem("token")
         this.setState({
-            userToken : ""
+            userToken: ""
         });
 
     }
@@ -54,9 +53,7 @@ class App extends Component {
                                         <li className="nav-item">
                                             <Link to="/" className="nav-link active">Homepage</Link>
                                         </li>
-                                        <li className="nav-item">
-                                            <Link to="/welcome" className="nav-link">Welcome</Link>
-                                        </li>
+
                                         <li className="nav-item">
                                             <Link to="/contact" className="nav-link">Contact</Link>
                                         </li>
@@ -79,12 +76,12 @@ class App extends Component {
                                                         <Link to="/add-movies" className="nav-link">AddMovies</Link>
                                                     </li>
                                                     <li className="nav-item">
-                                                        <Link to="" className="nav-link"onClick = { () => this.logOut() }>Log Out</Link>
+                                                        <Link to="" className="nav-link" onClick={() => this.logOut()}>Log Out</Link>
                                                     </li>
                                                 </>
                                             )}
 
-                                      
+
 
                                     </ul>
 
@@ -97,7 +94,6 @@ class App extends Component {
 
                     <Switch>
                         <Route exact path="/" component={Homepage} />
-                        <Route exact path="/welcome" component={Welcome} />
                         <Route exact path="/contact" component={Contact} />
                         <Route exact path="/about" component={About} />
                         <Route exact path="/add-movies" component={AddMovies} />
