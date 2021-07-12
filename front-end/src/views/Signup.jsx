@@ -13,6 +13,7 @@ export default class Signup extends Component {
             errors: []
         }
         this.getSignup = this.getSignup.bind(this)
+<<<<<<< HEAD
         this.validateForm = this.validateForm.bind(this)
     }
 
@@ -47,6 +48,19 @@ export default class Signup extends Component {
 
 
             )
+=======
+    }
+
+
+    async getSignup() {
+        try {
+            const url = "http://localhost:8000/auth/signup"
+            const { data } = await axios.post(url, { username: this.state.username, password: this.state.password })
+            console.log(data);
+            localStorage.setItem('token', data.token);
+            this.props.history.push("/login");
+
+>>>>>>> ftFronend2-search
         } catch (error) {
             console.log("errror", error);
 
@@ -54,7 +68,10 @@ export default class Signup extends Component {
     }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ftFronend2-search
     render() {
         const alert = this.props.alert;
 
