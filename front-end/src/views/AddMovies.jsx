@@ -25,7 +25,7 @@ export default class AddMovies extends Component {
                     <h1 className="text-center pt-5">Add a movie here !</h1>
                     <div class="input-group pt-5">
                         <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="button-addon2" onChange={this.changeTitle}></input>
-                        <input type="text" class="form-control" placeholder="Original Language" aria-label="Original Language" aria-describedby="button-addon2"></input>
+                        <input type="text" class="form-control" placeholder="Original Language" aria-label="Original Language" aria-describedby="button-addon2" onChange={this.changeTitle}></input>
                         <input type="text" class="form-control" placeholder="Actors" aria-label="Actors" aria-describedby="button-addon2"></input>
                         <input type="text" class="form-control" placeholder="Authors" aria-label="Authors" aria-describedby="button-addon2"></input>
                         <input type="text" class="form-control" placeholder="Release Date" aria-label="Release Date" aria-describedby="button-addon2"></input>
