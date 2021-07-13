@@ -37,7 +37,7 @@ class App extends Component {
             this.setState({
                 informDisconnection: false,
             });
-        }, 10000)
+        }, 3000)
       
     }
 
