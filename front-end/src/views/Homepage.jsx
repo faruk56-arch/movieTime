@@ -76,7 +76,10 @@ export default class Homepage extends Component {
                                     title={movie.title}
                                     description={movie.description}
                                     image={movie.image}
-                                />
+                                    support={movie.adress.map(adress => adress.type).join(", ")}
+                                    name={movie.adress.map(adress => adress.typeName).join(", ")}
+                                    whereToFind={movie.adress.map(adress => adress.adress).join(", ")}
+                                    />
                             })}
                         </div>
                     }

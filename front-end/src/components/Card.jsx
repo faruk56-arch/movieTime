@@ -9,7 +9,10 @@ class Card extends React.Component {
                 <img src={this.props.image} />
                 <h5 className="card-title">{this.props.title}</h5>
                 <p>{this.props.description}</p>
-
+                <p>{this.props.support}</p>
+                <p>{this.props.name}</p>
+                <p>{this.props.whereToFind}</p>
+                
 
             </div>
         )
