@@ -5,6 +5,7 @@ const adressModel = require("../models/adress")
 const genreModel = require("../models/genres")
 const originalLanguageModel = require("../models/originalLanguages")
 const path = require("path")
+
 const getAllMovies = async (req, res) => {
     try {
         const movies = await movieModel.find().populate(['actor', 'adress', 'author', 'genre', 'originalLanguage'])
@@ -13,6 +14,7 @@ const getAllMovies = async (req, res) => {
         res.status(500).json({ message: "There was a problem", error })
     }
 }
+
 const get10Movies = async (req, res) => {
     try {
         const movies = await movieModel.find().limit(10).populate("actor", { name: 1, _id: 0 })

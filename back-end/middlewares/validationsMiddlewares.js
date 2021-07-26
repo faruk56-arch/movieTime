@@ -8,8 +8,6 @@ const validationMovies = [
 ]
 const validationLogin = [
     expressValidator.body("password").exists().isString(),
-   
-
 
 ]
 const validationSignup = [
@@ -24,12 +22,12 @@ const validationSignup = [
             .has().lowercase(1)
             .has().digits(1)
             .has().not().spaces()
-           
+
 
         return schema.validate(value);
 
     }),
-  
+
 ]
 
 
