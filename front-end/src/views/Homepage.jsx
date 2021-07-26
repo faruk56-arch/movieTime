@@ -60,7 +60,7 @@ export default class Homepage extends Component {
                                     author={movie.author.map(author => author.name).join(' ')}
                                     actor={movie.actor.map(actor => actor.name).join(', ')}
                                     support={movie.adress.map(adress => adress.type).join(", ")}
-                                    name={movie.adress.map(adress => adress.typeName).join(", ")}
+                                    // name={movie.adress.map(adress => adress.adress).join(", ")}
                                     whereToFind={movie.adress.map(adress => adress.adress).join(", ")}
                                     originalLanguage={movie.originalLanguage.map(originalLanguage => originalLanguage.name).join(' ')}
                                     note={movie.note}
@@ -70,14 +70,14 @@ export default class Homepage extends Component {
                         </>
                     }
                     {this.state.movies.length > 1 &&
-                        <div className="container-card">
+                        <div className=" container-card">
                             {this.state.movies.map(movie => {
                                 return <Card
                                     title={movie.title}
                                     description={movie.description}
                                     image={movie.image}
                                     support={movie.adress.map(adress => adress.type).join(", ")}
-                                    name={movie.adress.map(adress => adress.typeName).join(", ")}
+                                    // name={movie.adress.map(adress => adress.name).join(", ")}
                                     whereToFind={movie.adress.map(adress => adress.adress).join(", ")}
                                     />
                             })}

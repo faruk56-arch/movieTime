@@ -38,7 +38,7 @@ export default class Signup extends Component {
                 console.log(data);
                 localStorage.setItem('token', data.token);
                 this.props.history.push("/login");
-               
+
 
             } else (
                 this.setState({
@@ -61,14 +61,14 @@ export default class Signup extends Component {
 
             <div className="pt-5">
                 {this.state.errors && <div>
-                    
+
                     <div className="row">
                         <div className="offset-3 col-6 mx-auto">
-                        {this.state.errors.map((error) => {
-                        return <div className="alert alert-danger" role="alert">
-                        {error}
-                    </div>
-                    })}
+                            {this.state.errors.map((error) => {
+                                return <div className="alert alert-danger" role="alert">
+                                    {error}
+                                </div>
+                            })}
                         </div>
                     </div>
                 </div>}

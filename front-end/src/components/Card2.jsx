@@ -1,5 +1,7 @@
 import React from 'react';
-import "./Card.css"
+// import "./Card.css"
+import "./Card2.css"
+
 
 class Card2 extends React.Component {
     render() {
@@ -17,7 +19,7 @@ class Card2 extends React.Component {
                 <p>Actors :  {this.props.actor}</p>
                 <p>Release Date :  {this.props.releaseDate}</p>
                 <p>Support :  {this.props.support}</p>
-                <p>Name :  {this.props.name}</p>
+                {/* <p>Name :  {this.props.name}</p> */}
                 <p>Where to find : {this.props.whereToFind}</p>
                 <p>Original Language :  {this.props.originalLanguage}</p>
 

@@ -1,0 +1,13 @@
+.Card2 {
+    background:rgb(219, 217, 217);
+    /* width : 650px;
+    height : 200px; */
+    font-size: 19px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin:auto;
+} 
+
+.Card2 img {
+    width: 400px;
+}
