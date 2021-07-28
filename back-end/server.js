@@ -22,7 +22,7 @@ mongoose.connect(MONGODB_URI, (err) => {
     }
 })
 
-const port = PORT
+const port = PORT || 8000
 
 const app = express()
 app.use(cors())
