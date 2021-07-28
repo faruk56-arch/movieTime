@@ -6,7 +6,7 @@ class Card extends React.Component {
         return (
             <div className="card">
 
-                <img src={this.props.image} />
+                <img  src={this.props.image} />
                 <h5 className="card-title">{this.props.title}</h5>
                 <p>{this.props.description}</p>
 
