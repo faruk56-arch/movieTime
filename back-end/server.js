@@ -1,3 +1,5 @@
+
+require('dotenv').config();
 const express = require("express")
 const mongoose = require("mongoose")
 const moviesRoutes = require("./routes/moviesRoutes")
@@ -10,8 +12,9 @@ const authRoutes = require("./routes/authRoutes")
 const usersRoutes = require("./routes/usersRoutes")
 
 const cors = require("cors")
+const {MONGODB_URI, PORT}= process.env;
 
-mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
+mongoose.connect(MONGODB_URI, (err) => {
     if (err) {
         console.error(err);
     } else {
@@ -19,7 +22,7 @@ mongoose.connect("mongodb://localhost:27017/movieTime", (err) => {
     }
 })
 
-const port = 8000
+const port = PORT
 
 const app = express()
 app.use(cors())
